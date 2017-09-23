@@ -49,6 +49,8 @@ group :development do
   gem "better_errors"
   # is optional, but is necessary to use Better Errors' advanced features (REPL, local/instance variable inspection, pretty stack frame names).
   gem "binding_of_caller"
+  # Generate Entity-Relationship Diagrams for Rails applications
+  gem 'rails-erd'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
