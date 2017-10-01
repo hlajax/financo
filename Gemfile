@@ -11,6 +11,10 @@ gem 'rails-i18n'
 gem 'devise'
 # Translations for the devise gem
 gem 'devise-i18n'
+# Materialize Sass version for Rails Asset Pipeline
+gem 'materialize-sass'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
