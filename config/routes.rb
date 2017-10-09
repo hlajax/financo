@@ -3,6 +3,8 @@ Rails.application.routes.draw do
     get 'home/index'
   end
 
+  get 'dashboard', to: 'backoffice/dashboard#index'
+
   namespace :backoffice do
     get 'dashboard/index'
   end
