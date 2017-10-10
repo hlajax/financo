@@ -3,7 +3,7 @@
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">one</a></li>
     <li class="divider"></li>
-    <li><a href="#!">Sign Out!</a></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
   </ul>
   <div class="navbar-fixed">
     <nav>
