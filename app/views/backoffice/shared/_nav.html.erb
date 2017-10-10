@@ -1,14 +1,17 @@
 <header>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">Sign Out!</a></li>
+  </ul>
   <div class="navbar-fixed">
     <nav>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Control panel</a></li>
-    			<li><a href="components.html">Accounts</a></li>
-    			<li><a href="components.html">Budget</a></li>
-    			<li><a href="components.html">Schedules</a></li>
-    			<li><a href="components.html">Reports</a></li>
-    			<li><a href="components.html">Settings</a></li>
+        <a href="#" class="brand-logo center">page_title</a>
+        <ul class="right">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">more_vert</i></a></li>
         </ul>
       </div>
     </nav>
@@ -16,14 +19,18 @@
   <!-- Move the sidenav outside of .navbar-fixed -->
   <ul class="side-nav" id="mobile-demo">
     <%= image_tag "background-profile", :class => "responsive-img" %>
-    <div class="card-panel">
-      <p class="flow-text center">user_name</p>
+    <div class="container">
+      <div class="card-panel">
+        <p><b>user_name</b></p>
+        <p>user_email</p>
+      </div>
     </div>
     <li><a href="sass.html">Control panel</a></li>
     <li><a href="components.html">Accounts</a></li>
     <li><a href="components.html">Budget</a></li>
     <li><a href="components.html">Schedules</a></li>
     <li><a href="components.html">Reports</a></li>
+    <li><div class="divider"></div></li>
     <li><a href="components.html">Settings</a></li>
   </ul>
 </header>
