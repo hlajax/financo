@@ -29,3 +29,10 @@
 
  $link-color: color("light-blue", "darken-1") !default;
  @import 'materialize';
+
+// Devise
+#form-login {
+  min-width: 280px;
+  max-width: 350px;
+  margin: 80px auto 0;
+}
