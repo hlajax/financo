@@ -1,4 +1,6 @@
 class Backoffice::Settings::ExpenseCategoriesController < BackofficeController
+  before_action :set_expense_category, only: [:edit, :update]
+
   def index
   end
 
