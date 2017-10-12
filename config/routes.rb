@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :backoffice do
-    namespace :settings do
-      get 'income_categories/index'
-    end
-  end
-
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'backoffice/settings', to: 'backoffice/settings#index'
 
@@ -21,9 +15,8 @@ Rails.application.routes.draw do
     get 'home/index'
   end
 
-
   devise_for :admins
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'user/registrations' }
 
   root 'site/home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
