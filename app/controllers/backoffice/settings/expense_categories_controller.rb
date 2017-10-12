@@ -16,14 +16,23 @@ class Backoffice::Settings::ExpenseCategoriesController < BackofficeController
   end
 
   def edit
-    #code
+    set_expense_category
   end
 
   def update
-    #code
+    set_expense_category
+    if @expense_category.update(params_expense_category)
+      redirect_to backoffice_settings_path, notice: "The (#{@expense_category.name}) expense category was successfully updated"
+    else
+      render :edit
+    end
   end
 
   private
+
+  def set_expense_category
+    @expense_category = ExpenseCategory.find(params[:id])
+  end
 
   def params_expense_category
     params.require(:expense_category).permit(:name)
