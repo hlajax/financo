@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
-  get 'dashboard', to: 'backoffice/dashboard#index'
-  get 'dashboard/settings', to: 'backoffice/settings#index'
+  namespace :backoffice do
+    namespace :settings do
+      get 'income_categories/index'
+    end
+  end
+
+  get 'backoffice', to: 'backoffice/dashboard#index'
+  get 'backoffice/settings', to: 'backoffice/settings#index'
 
   namespace :backoffice do
-    resources :expense_categories, except: [:show, :destroy]
-    resources :income_categories, except: [:show, :destroy]
+    namespace :settings do
+      resources :expense_categories, except: [:show, :destroy]
+      resources :income_categories, except: [:show, :destroy]
+    end
     get 'settings/index'
     get 'dashboard/index'
   end
