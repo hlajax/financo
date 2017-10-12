@@ -1,0 +1,26 @@
+<!-- Navbar goes here -->
+<%= render partial: "backoffice/shared/nav" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12 m9 l10">
+      <h2 class="header"><%= action %></h2>
+      <% if @income_category.errors.any? %>
+        <% @income_category.errors.full_messages.each do |message| %>
+          <script>
+            Materialize.toast('<%= message %>', 4000, 'red');
+          </script>
+        <% end %>
+      <% end %>
+      <%= form_for [:backoffice, :settings, @income_category], class: "col s12 m9 l10" do |f| %>
+        <div class="row">
+          <div class="input-field col s12 m9 l10">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+          </div>
+        </div>
+        <button type="submit" class="btn waves-effect waves-light"><i class="material-icons right">send</i>Save</button>
+      <% end %>
+    </div>
+  </div>
+</div>

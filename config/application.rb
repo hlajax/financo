@@ -30,6 +30,6 @@ module OincApp
     config.generators.system_tests = nil
 
     # Locale configs
-    config.i18n.default_locale = :"pt-BR"
+    config.i18n.default_locale = :en
   end
 end

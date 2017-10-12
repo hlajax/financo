@@ -15,5 +15,11 @@
 
   <body>
     <%= yield %>
+
+    <% if notice %>
+      <script>
+        Materialize.toast('<%= notice %>', 4000);
+      </script>
+    <% end %>
   </body>
 </html>

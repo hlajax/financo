@@ -10,7 +10,7 @@ gem 'rails-i18n'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 # Translations for the devise gem
-# gem 'devise-i18n'
+gem 'devise-i18n'
 # Materialize Sass version for Rails Asset Pipeline
 gem 'materialize-sass'
 # Use jquery as the JavaScript library
