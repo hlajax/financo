@@ -4,5 +4,7 @@ class Backoffice::SettingsController < ApplicationController
   layout "backoffice"
 
   def index
+    @expense_categories = ExpenseCategory.all
+    @income_categories = IncomeCategory.all
   end
 end

@@ -4,4 +4,6 @@ $( document ).on('turbolinks:load', function() {
   Waves.displayEffect();
   // Initialize collapse button
   $(".button-collapse").sideNav();
+  // Initialize tabs swipe
+  $('ul.tabs').tabs();
 });
