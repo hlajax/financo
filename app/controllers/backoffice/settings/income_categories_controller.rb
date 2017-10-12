@@ -1,4 +1,4 @@
-class Backoffice::Settings::IncomeCategoriesController < ApplicationController
+class Backoffice::Settings::IncomeCategoriesController < BackofficeController
   def index
   end
 end
