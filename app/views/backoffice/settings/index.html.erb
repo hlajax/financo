@@ -43,7 +43,7 @@
                   <td><%= expense_category.id %></td>
                   <td><%= expense_category.name %></td>
                   <td>
-                    <%= link_to edit_backoffice_settings_expense_category_path(expense_category) do %>
+                    <%= link_to edit_backoffice_settings_expense_category_path(expense_category.id) do %>
                       <i class="material-icons">mode edit</i>
                     <% end %>
                   </td>
@@ -82,9 +82,9 @@
                   <td><%= income_category.id %></td>
                   <td><%= income_category.name %></td>
                   <td>
-                    <a href="#">
+                    <%= link_to edit_backoffice_settings_income_category_path(income_category.id) do %>
                       <i class="material-icons">mode edit</i>
-                    </a>
+                    <% end %>
                   </td>
                   <td class="right">
                     <a href="#">
