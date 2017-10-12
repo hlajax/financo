@@ -18,6 +18,8 @@
                 <tr>
                   <th data-field="id">ID</th>
                   <th data-field="name">Name</th>
+                  <th data-field="button-edit"></th>
+                  <th data-field="button-delete"></th>
                 </tr>
               </thead>
 
@@ -26,6 +28,16 @@
                 <tr>
                   <td><%= expense_category.id %></td>
                   <td><%= expense_category.name %></td>
+                  <td>
+                    <a href="#">
+                      <i class="material-icons">mode edit</i>
+                    </a>
+                  </td>
+                  <td class="right">
+                    <a href="#">
+                      <!-- <i class="material-icons">delete</i> -->
+                    </a>
+                  </td>
                 </tr>
                 <% end %>
               </tbody>
@@ -37,6 +49,8 @@
                 <tr>
                   <th data-field="id">ID</th>
                   <th data-field="name">Name</th>
+                  <th data-field="button-edit"></th>
+                  <th data-field="button-delete"></th>
                 </tr>
               </thead>
 
@@ -45,6 +59,16 @@
                 <tr>
                   <td><%= income_category.id %></td>
                   <td><%= income_category.name %></td>
+                  <td>
+                    <a href="#">
+                      <i class="material-icons">mode edit</i>
+                    </a>
+                  </td>
+                  <td class="right">
+                    <a href="#">
+                      <!-- <i class="material-icons">delete</i> -->
+                    </a>
+                  </td>
                 </tr>
                 <% end %>
               </tbody>
