@@ -1,6 +1,12 @@
 <!-- Navbar goes here -->
 <%= render partial: "backoffice/shared/nav" %>
 
+<% if notice %>
+  <script>
+    Materialize.toast('<%= notice %>', 4000);
+  </script>
+<% end %>
+
 <div class="container">
   <!-- Page Layout here -->
   <!-- Grey navigation panel -->
@@ -9,10 +15,18 @@
       <div class="collapsible-header"><i class="material-icons">filter_drama</i>Categories</div>
       <div class="collapsible-body">
         <ul id="tabs-swipe-demo" class="tabs">
-            <li class="tab col s6 m6 l6"><a href="#expense-swipe-1">Expense</a></li>
-            <li class="tab col s6 m6 l6"><a href="#income-swipe-2">Income</a></li>
+            <li class="tab col s6 m6 l6"><a href="#expense-swipe">Expense</a></li>
+            <li class="tab col s6 m6 l6"><a href="#income-swipe">Income</a></li>
           </ul>
-          <div id="expense-swipe-1" class="col s12">
+          <div id="expense-swipe" class="col s12">
+            <div class="row">
+              <div class="col s12 center">
+                <%= link_to new_backoffice_settings_expense_category_path, class: "waves-effect waves-light btn" do %>
+                  <i class="material-icons left">add</i>
+                  New Expense Category
+                <% end %>
+              </div>
+            </div>
             <table class="highlight">
               <thead>
                 <tr>
@@ -29,9 +43,9 @@
                   <td><%= expense_category.id %></td>
                   <td><%= expense_category.name %></td>
                   <td>
-                    <a href="#">
+                    <%= link_to edit_backoffice_settings_expense_category_path(expense_category) do %>
                       <i class="material-icons">mode edit</i>
-                    </a>
+                    <% end %>
                   </td>
                   <td class="right">
                     <a href="#">
@@ -43,7 +57,15 @@
               </tbody>
             </table>
           </div>
-          <div id="income-swipe-2" class="col s12">
+          <div id="income-swipe" class="col s12">
+            <div class="row">
+              <div class="col s12 center">
+                <%= link_to new_backoffice_settings_income_category_path, class: "waves-effect waves-light btn" do %>
+                  <i class="material-icons left">add</i>
+                  New Income Category
+                <% end %>
+              </div>
+            </div>
             <table class="highlight">
               <thead>
                 <tr>
