@@ -29,12 +29,20 @@
         <p><%= current_user.email %></p>
       </div>
     </div>
-    <li><a href="sass.html">Control panel</a></li>
+    <li>
+      <%= link_to dashboard_path do %>
+        Home
+      <% end %>
+    </li>
     <li><a href="components.html">Accounts</a></li>
     <li><a href="components.html">Budget</a></li>
     <li><a href="components.html">Schedules</a></li>
     <li><a href="components.html">Reports</a></li>
     <li><div class="divider"></div></li>
-    <li><a href="components.html">Settings</a></li>
+    <li>
+      <%= link_to dashboard_settings_path do %>
+        Settings
+      <% end %>
+    </li>
   </ul>
 </header>
