@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :admins
-  devise_for :users, :controllers => { registrations: 'user/registrations' }
+  devise_for :users
 
   root 'site/home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
