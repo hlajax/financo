@@ -25,7 +25,7 @@
     <%= image_tag "background-profile", :class => "responsive-img" %>
     <div class="container">
       <div class="card-panel">
-        <p><b>user_name</b></p>
+        <p><b><%= "#{current_user.first_name} #{current_user.last_name}" %></b></p>
         <p><%= current_user.email %></p>
       </div>
     </div>
