@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :settings do
       resources :expense_categories, except: [:show, :destroy]
       resources :income_categories, except: [:show, :destroy]
+      resources :currencies, except: [:show, :destroy]
     end
     get 'settings/index'
     get 'dashboard/index'

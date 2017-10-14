@@ -1,6 +1,7 @@
 class Backoffice::SettingsController < BackofficeController
 
   def index
+    @currencies = Currency.all
     @expense_categories = ExpenseCategory.all
     @income_categories = IncomeCategory.all
   end
