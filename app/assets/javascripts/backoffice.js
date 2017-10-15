@@ -6,4 +6,6 @@ $( document ).on('turbolinks:load', function() {
   $(".button-collapse").sideNav();
   // Initialize tabs swipe
   $('ul.tabs').tabs();
+  // Initialize select
+  $('select').material_select();
 });

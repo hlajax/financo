@@ -4,6 +4,8 @@ class Backoffice::SettingsController < BackofficeController
     @currencies = Currency.all
     @expense_categories = ExpenseCategory.all
     @income_categories = IncomeCategory.all
+    @payees = Payee.all
+    @accounts = Account.all
   end
 
   def create

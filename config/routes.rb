@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resources :expense_categories, except: [:show, :destroy]
       resources :income_categories, except: [:show, :destroy]
       resources :currencies, except: [:show, :destroy]
+      resources :accounts, except: [:show, :destroy]
+      resources :payees, except: [:show, :destroy]
     end
     get 'settings/index'
     get 'dashboard/index'
