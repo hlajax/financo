@@ -1,12 +1,11 @@
 <div class="container">
   <!-- Page Layout here -->
-  <!-- Grey navigation panel -->
-  <ul class="collapsible popout" data-collapsible="accordion">
-    <li>
-      <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>Currencies</div>
-      <div class="collapsible-body">
-        <div class="col s12">
+  <div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+      <!-- Currencies BEGIN -->
+      <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Currencies</div>
+        <div class="collapsible-body">
           <div class="row">
             <div class="col s12 center">
               <%= link_to new_backoffice_settings_currency_path, class: "waves-effect waves-light btn" do %>
@@ -15,13 +14,12 @@
               <% end %>
             </div>
           </div>
-          <table class="highlight">
+          <table>
             <thead>
               <tr>
-                <th data-field="id">ID</th>
-                <th data-field="name">Name</th>
-                <th data-field="button-edit"></th>
-                <th data-field="button-delete"></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
               </tr>
             </thead>
 
@@ -32,151 +30,136 @@
                 <td><%= currency.name %></td>
                 <td>
                   <%= link_to edit_backoffice_settings_currency_path(currency.id) do %>
-                  <i class="material-icons">mode edit</i>
+                  <i class="material-icons right">mode edit</i>
                   <% end %>
-                </td>
-                <td class="right">
-                  <a href="#">
-                    <!-- <i class="material-icons">delete</i> -->
-                  </a>
                 </td>
               </tr>
               <% end %>
             </tbody>
           </table>
         </div>
-        <div id="income-swipe" class="col s12">
+      </li><!-- Currencies END -->
+
+      <!-- Categories BEGIN -->
+      <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Categories</div>
+        <div class="collapsible-body">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#expense-categories">Expense</a></li>
+              <li class="tab col s3"><a href="#income-categories">Income</a></li>
+            </ul>
+            <!-- Categories - Expense -->
+            <div id="expense-categories" class="col s12">
+              <div class="row">
+                <div class="col s12 center">
+                  <%= link_to new_backoffice_settings_expense_category_path, class: "waves-effect waves-light btn" do %>
+                  <i class="material-icons left">add</i>
+                  New Expense Category
+                  <% end %>
+                </div>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @expense_categories.each do |expense_category| %>
+                  <tr>
+                    <td><%= expense_category.id %></td>
+                    <td><%= expense_category.name %></td>
+                    <td>
+                      <%= link_to edit_backoffice_settings_expense_category_path(expense_category.id) do %>
+                      <i class="material-icons right">mode edit</i>
+                      <% end %>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Categories - Incomes -->
+            <div id="income-categories" class="col s12">
+              <div class="row">
+                <div class="col s12 center">
+                  <%= link_to new_backoffice_settings_income_category_path, class: "waves-effect waves-light btn" do %>
+                  <i class="material-icons left">add</i>
+                  New Income Category
+                  <% end %>
+                </div>
+              </div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @income_categories.each do |income_category| %>
+                  <tr>
+                    <td><%= income_category.id %></td>
+                    <td><%= income_category.name %></td>
+                    <td>
+                      <%= link_to edit_backoffice_settings_income_category_path(income_category.id) do %>
+                      <i class="material-icons right">mode edit</i>
+                      <% end %>
+                    </td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          dfdfdfdfdfd
           <div class="row">
             <div class="col s12 center">
-              <%= link_to new_backoffice_settings_income_category_path, class: "waves-effect waves-light btn" do %>
+              <%= link_to new_backoffice_settings_currency_path, class: "waves-effect waves-light btn" do %>
               <i class="material-icons left">add</i>
-              New Income Category
+              New Currency
               <% end %>
             </div>
           </div>
-          <table class="highlight">
+          <table>
             <thead>
               <tr>
-                <th data-field="id">ID</th>
-                <th data-field="name">Name</th>
-                <th data-field="button-edit"></th>
-                <th data-field="button-delete"></th>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
               </tr>
             </thead>
 
             <tbody>
-              <% @income_categories.each do |income_category| %>
+              <% @currencies.each do |currency| %>
               <tr>
-                <td><%= income_category.id %></td>
-                <td><%= income_category.name %></td>
+                <td><%= currency.id %></td>
+                <td><%= currency.name %></td>
                 <td>
-                  <%= link_to edit_backoffice_settings_income_category_path(income_category.id) do %>
-                  <i class="material-icons">mode edit</i>
+                  <%= link_to edit_backoffice_settings_currency_path(currency.id) do %>
+                  <i class="material-icons right">mode edit</i>
                   <% end %>
-                </td>
-                <td class="right">
-                  <a href="#">
-                    <!-- <i class="material-icons">delete</i> -->
-                  </a>
                 </td>
               </tr>
               <% end %>
             </tbody>
           </table>
         </div>
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>Categories</div>
-      <div class="collapsible-body">
-        <ul id="tabs-swipe-demo" class="tabs">
-          <li class="tab col s6 m6 l6">
-            <a href="#expense-swipe">Expense</a>
-          </li>
-          <li class="tab col s6 m6 l6">
-            <a href="#income-swipe">Income</a>
-          </li>
-        </ul>
-        <div id="expense-swipe" class="col s12">
-          <div class="row">
-            <div class="col s12 center">
-              <%= link_to new_backoffice_settings_expense_category_path, class: "waves-effect waves-light btn" do %>
-              <i class="material-icons left">add</i>
-              New Expense Category
-              <% end %>
-            </div>
-          </div>
-          <table class="highlight">
-            <thead>
-              <tr>
-                <th data-field="id">ID</th>
-                <th data-field="name">Name</th>
-                <th data-field="button-edit"></th>
-                <th data-field="button-delete"></th>
-              </tr>
-            </thead>
+      </li><!-- Categories END -->
 
-            <tbody>
-              <% @expense_categories.each do |expense_category| %>
-              <tr>
-                <td><%= expense_category.id %></td>
-                <td><%= expense_category.name %></td>
-                <td>
-                  <%= link_to edit_backoffice_settings_expense_category_path(expense_category.id) do %>
-                  <i class="material-icons">mode edit</i>
-                  <% end %>
-                </td>
-                <td class="right">
-                  <a href="#">
-                    <!-- <i class="material-icons">delete</i> -->
-                  </a>
-                </td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
-        <div id="income-swipe" class="col s12">
-          <div class="row">
-            <div class="col s12 center">
-              <%= link_to new_backoffice_settings_income_category_path, class: "waves-effect waves-light btn" do %>
-              <i class="material-icons left">add</i>
-              New Income Category
-              <% end %>
-            </div>
-          </div>
-          <table class="highlight">
-            <thead>
-              <tr>
-                <th data-field="id">ID</th>
-                <th data-field="name">Name</th>
-                <th data-field="button-edit"></th>
-                <th data-field="button-delete"></th>
-              </tr>
-            </thead>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+        <div class="collapsible-body">
 
-            <tbody>
-              <% @income_categories.each do |income_category| %>
-              <tr>
-                <td><%= income_category.id %></td>
-                <td><%= income_category.name %></td>
-                <td>
-                  <%= link_to edit_backoffice_settings_income_category_path(income_category.id) do %>
-                  <i class="material-icons">mode edit</i>
-                  <% end %>
-                </td>
-                <td class="right">
-                  <a href="#">
-                    <!-- <i class="material-icons">delete</i> -->
-                  </a>
-                </td>
-              </tr>
-              <% end %>
-            </tbody>
-          </table>
         </div>
-      </div>
-    </li>
-  </ul>
-</div>
+      </li>
+    </ul>
+  </div><!-- Page Layout here END -->
+</div><!-- Container END -->
