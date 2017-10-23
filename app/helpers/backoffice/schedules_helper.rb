@@ -1,0 +1,2 @@
+module Backoffice::SchedulesHelper
+end

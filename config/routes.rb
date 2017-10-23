@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :backoffice do
+    get 'transactions/index'
+  end
+
+  namespace :backoffice do
+    get 'schedules/index'
+  end
+
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'backoffice/settings', to: 'backoffice/settings#index'
 
