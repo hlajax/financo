@@ -1,4 +1,5 @@
 class Backoffice::SettingsController < BackofficeController
+  before_action :set_currency, only: [:edit, :update]
 
   def index
     @currencies = Currency.all
@@ -6,21 +7,18 @@ class Backoffice::SettingsController < BackofficeController
     @income_categories = IncomeCategory.all
     @payees = Payee.all
     @accounts = Account.all
+    @currency = Currency.new
   end
 
   def create
-    #code
   end
 
   def new
-    #code
   end
 
   def edit
-    #code
   end
 
   def update
-    #code
   end
 end

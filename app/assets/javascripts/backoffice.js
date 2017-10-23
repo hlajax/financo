@@ -8,4 +8,6 @@ $( document ).on('turbolinks:load', function() {
   $('ul.tabs').tabs();
   // Initialize select
   $('select').material_select();
+  // Initialize modal
+  $('.modal').modal();
 });

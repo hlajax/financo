@@ -1,17 +1,21 @@
+<!-- Currency Modal Structure -->
+<%= render 'backoffice/settings/currencies/shared/form_modal', action: "New Currency" %>
+
 <div class="container">
   <!-- Page Layout here -->
   <div class="row">
     <ul class="collapsible" data-collapsible="accordion">
       <!-- Currencies -->
       <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Currencies</div>
+        <div id="collapsible-currencies" class="collapsible-header"><i class="material-icons">filter_drama</i>Currencies</div>
         <div class="collapsible-body">
           <div class="row">
             <div class="col s12 center">
-              <%= link_to new_backoffice_settings_currency_path, class: "waves-effect waves-light btn" do %>
-              <i class="material-icons left">add</i>
-              New Currency
-              <% end %>
+              <!-- Currency Modal Trigger -->
+              <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
+                <i class="material-icons left">add</i>
+                New Currency
+              </a>
             </div>
           </div>
           <table>
