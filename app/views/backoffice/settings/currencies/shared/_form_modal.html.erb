@@ -2,29 +2,37 @@
     <div class="modal-content">
       <div class="row">
         <%= form_for [:backoffice, :settings, @currency], :html => { class: "col s12" } do |f| %>
-        <h4 class="col s12 m6 offset-m3 l6 offset-l3"><%= action %></h4>
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
+              <h4 class="header"><%= action %></h4>
+            </div>
+          </div>
           <div class="row">
             <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
               <%= f.label :name %>
-              <%= f.text_field :name, class: "validate" %>
+              <%= f.text_field :name %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
               <%= f.label :code %>
-              <%= f.text_field :code, class: "validate" %>
+              <%= f.text_field :code %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
               <%= f.label :sign %>
-              <%= f.text_field :sign, class: "validate" %>
+              <%= f.text_field :sign %>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="submit" class="modal-action modal-close btn waves-effect waves-light"><i class="material-icons right">send</i>Save</button>
+          <div class="row">
+            <div class="input-field col s12 m6 offset-m3 l6 offset-l3">
+              <div class="modal-footer">
+                <button type="submit" class="modal-action modal-close btn waves-effect waves-light"><i class="material-icons right">send</i>Save</button>
+              </div>
+            </div>
           </div>
-          <% end %>
-        </div>
+        <% end %>
+      </div>
     </div>
   </div>
