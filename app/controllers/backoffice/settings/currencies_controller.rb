@@ -7,7 +7,7 @@ class Backoffice::Settings::CurrenciesController < BackofficeController
   def create
     @currency = Currency.new(params_currency)
     if @currency.save
-      redirect_to backoffice_settings_path, notice: "The (#{@currency.name}) currency was successfully created"
+      redirect_to backoffice_settings_path + "#collapsible-currencies", notice: "The (#{@currency.name}) currency was successfully created"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Backoffice::Settings::CurrenciesController < BackofficeController
   def update
     set_currency
     if @currency.update(params_currency)
-      redirect_to backoffice_settings_path, notice: "The (#{@currency.name}) currency was successfully updated"
+      redirect_to backoffice_settings_path + "#collapsible-currencies", notice: "The (#{@currency.name}) currency was successfully updated"
     else
       render :edit
     end

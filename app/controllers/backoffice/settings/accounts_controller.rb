@@ -18,7 +18,7 @@ class Backoffice::Settings::AccountsController < ApplicationController
   def create
     @account = Account.new(params_account)
     if @account.save
-      redirect_to backoffice_settings_path, notice: "The (#{@account.name}) was successfully created"
+      redirect_to backoffice_settings_path + "#collapsible-accounts", notice: "The (#{@account.name}) was successfully created"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Backoffice::Settings::AccountsController < ApplicationController
   def update
     set_account
     if @account.update
-      redirect_to backoffice_settings_path, notice: "The (#{@account.name}) was successfully updated"
+      redirect_to backoffice_settings_path + "#collapsible-accounts", notice: "The (#{@account.name}) was successfully updated"
     else
       render :edit
     end

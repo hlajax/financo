@@ -18,7 +18,7 @@ class Backoffice::Settings::PayeesController < ApplicationController
   def create
     @payee = Payee.new(params_payee)
     if @payee.save
-      redirect_to backoffice_settings_path, notice: "The (#{@payee.name}) was successfully created"
+      redirect_to backoffice_settings_path + "#collapsible-payees", notice: "The (#{@payee.name}) was successfully created"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Backoffice::Settings::PayeesController < ApplicationController
   def update
     set_account
     if @account.save
-      redirect_to backoffice_settings_path, notice: "The (#{@payee.name}) was successfully updated"
+      redirect_to backoffice_settings_path + "#collapsible-payees", notice: "The (#{@payee.name}) was successfully updated"
     else
       render :edit
     end

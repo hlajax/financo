@@ -7,7 +7,7 @@ class Backoffice::Settings::ExpenseCategoriesController < BackofficeController
   def create
     @expense_category = ExpenseCategory.new(params_expense_category)
     if @expense_category.save
-      redirect_to backoffice_settings_path, notice: "The (#{@expense_category.name}) expense category was successfully created"
+      redirect_to backoffice_settings_path + "#collapsible-categories", notice: "The (#{@expense_category.name}) expense category was successfully created"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Backoffice::Settings::ExpenseCategoriesController < BackofficeController
   def update
     set_expense_category
     if @expense_category.update(params_expense_category)
-      redirect_to backoffice_settings_path, notice: "The (#{@expense_category.name}) expense category was successfully updated"
+      redirect_to backoffice_settings_path + "#collapsible-categories", notice: "The (#{@expense_category.name}) expense category was successfully updated"
     else
       render :edit
     end

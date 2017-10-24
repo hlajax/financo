@@ -7,7 +7,7 @@ class Backoffice::Settings::IncomeCategoriesController < BackofficeController
   def create
     @income_category = IncomeCategory.new(params_income_category)
     if @income_category.save
-      redirect_to backoffice_settings_path, notice: "The (#{@income_category.name}) income category was successfully created"
+      redirect_to backoffice_settings_path + "#collapsible-categories", notice: "The (#{@income_category.name}) income category was successfully created"
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Backoffice::Settings::IncomeCategoriesController < BackofficeController
   def update
     set_income_category
     if @income_category.update(params_income_category)
-      redirect_to backoffice_settings_path, notice: "The (#{@income_category.name}) income category was successfully updated"
+      redirect_to backoffice_settings_path + "#collapsible-categories", notice: "The (#{@income_category.name}) income category was successfully updated"
     else
       render :edit
     end
