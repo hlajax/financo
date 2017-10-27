@@ -16,8 +16,11 @@
   <body>
     <!-- Navbar goes here -->
     <%= render partial: "backoffice/shared/nav" %>
-    
-    <%= yield %>
+
+    <!-- Page Layout here -->
+    <div class="container">
+      <%= yield %>
+    </div>
 
     <% if notice %>
       <script>
