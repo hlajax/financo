@@ -1,7 +1,4 @@
-class Backoffice::AccountsController < ApplicationController
-  # Alternative fix for correct not rendering
-  layout "backoffice"
-
+class Backoffice::AccountsController < BackofficeController
   before_action :set_account, only: [:edit, :update]
 
   def index

@@ -1,7 +1,4 @@
-class Backoffice::Settings::PayeesController < ApplicationController
-  # Alternative fix for correct not rendering
-  layout "backoffice"
-
+class Backoffice::Settings::PayeesController < BackofficeController
   before_action :set_payee, only: [:edit, :update]
 
   def index

@@ -1,4 +1,4 @@
-class Backoffice::TransactionsController < ApplicationController
+class Backoffice::TransactionsController < BackofficeController
   def index
   end
 end
