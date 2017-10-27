@@ -30,17 +30,33 @@
       </div>
     </div>
     <li>
-      <%= link_to backoffice_path do %>
+      <%= link_to backoffice_dashboard_index_path do %>
         Home
       <% end %>
     </li>
-    <li><a href="components.html">Accounts</a></li>
-    <li><a href="components.html">Budget</a></li>
-    <li><a href="components.html">Schedules</a></li>
-    <li><a href="components.html">Reports</a></li>
+    <li>
+      <%= link_to backoffice_accounts_path do %>
+        Accounts
+      <% end %>
+    </li>
+    <li>
+      <%= link_to backoffice_transactions_path do %>
+        Transactions
+      <% end %>
+    </li>
+    <li>
+      <%= link_to backoffice_schedules_path do %>
+        Schedules
+      <% end %>
+    </li>
+    <li>
+      <%= link_to backoffice_reports_index_path do %>
+        Reports
+      <% end %>
+    </li>
     <li><div class="divider"></div></li>
     <li>
-      <%= link_to backoffice_settings_path do %>
+      <%= link_to backoffice_settings_index_path do %>
         Settings
       <% end %>
     </li>
