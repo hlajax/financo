@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   namespace :backoffice do
+    get 'reports/index'
+  end
+
+  namespace :backoffice do
     get 'transactions/index'
   end
 
