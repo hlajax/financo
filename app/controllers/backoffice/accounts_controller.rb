@@ -5,6 +5,10 @@ class Backoffice::AccountsController < BackofficeController
     @accounts = Account.all
   end
 
+  def show
+    #code
+  end
+
   def new
     @account = Account.new
   end
@@ -16,7 +20,7 @@ class Backoffice::AccountsController < BackofficeController
   def create
     @account = Account.new(params_account)
     if @account.save
-      redirect_to backoffice_settings_path + "#collapsible-accounts", notice: "The (#{@account.name}) was successfully created"
+      redirect_to backoffice_accounts_path, notice: "The (#{@account.name}) was successfully created"
     else
       render :new
     end
@@ -25,7 +29,7 @@ class Backoffice::AccountsController < BackofficeController
   def update
     set_account
     if @account.update
-      redirect_to backoffice_settings_path + "#collapsible-accounts", notice: "The (#{@account.name}) was successfully updated"
+      redirect_to backoffice_accounts_path, notice: "The (#{@account.name}) was successfully updated"
     else
       render :edit
     end
