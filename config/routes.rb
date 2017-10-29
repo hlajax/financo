@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :backoffice do
     get 'dashboard/index'
-    resources :accounts, except: [:show, :destroy]
+    resources :accounts, except: [:destroy]
     resources :transactions, except: [:show, :destroy]
     resources :schedules, except: [:show, :destroy]
     get 'reports/index'

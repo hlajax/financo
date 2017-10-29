@@ -1,0 +1,18 @@
+<div class="col s12 m7">
+  <h2 class="header">All Accounts and Wallets</h2>
+
+  <% @accounts.each do |account| %>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content">
+          <h5><%= account.name %></h5>
+          <p><%= account.current_balance %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Transactions from this account", backoffice_account_path(account.id), class: "right" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</div>

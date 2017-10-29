@@ -2,6 +2,7 @@ class Backoffice::AccountsController < BackofficeController
   before_action :set_account, only: [:edit, :update]
 
   def index
+    @accounts = Account.all
   end
 
   def new
