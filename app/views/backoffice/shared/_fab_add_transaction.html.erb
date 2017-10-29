@@ -1,12 +1,36 @@
 <!-- Income Modal Structure -->
 <div id="modal-income" class="modal modal-fixed-footer">
+  <%= form_for [:backoffice, @income_transaction] do |f| %>
+  <h4>New Income</h4>
   <div class="modal-content">
-    <h4>New Income</h4>
-    <p>A bunch of text</p>
+      <%= f.label :account_id %>
+      <%= f.collection_select :account_id, Account.order(:name), :id, :name, include_blank: true %>
+
+      <%= f.label :amount %>
+      <%= f.number_field :amount %>
+
+      <%= f.label :currency_id %>
+      <%= f.collection_select :currency_id, Currency.order(:name), :id, :name, include_blank: true %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.label :payee_id %>
+      <%= f.collection_select :payee_id, Payee.order(:name), :id, :name, include_blank: true %>
+
+      <%= f.label :income_category_id %>
+      <%= f.collection_select :income_category_id, IncomeCategory.order(:name), :id, :name, include_blank: true %>
+
+      <%= f.label :datetime %>
+      <%= f.date_field :datetime %>
+
+      <%= f.label :done %>
+      <%= f.check_box :done %>
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    <button type="submit" class="modal-action modal-close btn waves-effect waves-light"><i class="material-icons right">send</i>Save</button>
   </div>
+  <% end %>
 </div>
 
 <!-- Exepense Structure -->

@@ -1,1 +1,20 @@
 <%= render partial: 'backoffice/shared/fab_add_transaction' %>
+
+<div class="col s12 m7">
+
+   <% @income_transactions.each do |income_transaction| %>
+      <div class="card horizontal">
+        <div class="card-stacked">
+          <div class="card-content">
+            <p><strong>Description: </strong><%= income_transaction.description %></p>
+            <p><strong>Date: </strong><%= income_transaction.datetime %></p>
+            <p><strong>Payee: </strong><%= income_transaction.payee %></p>
+            <p><strong>Amount: </strong><%= income_transaction.amount %></p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+   <% end %>
+ </div>

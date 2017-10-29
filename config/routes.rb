@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'backoffice', to: 'backoffice/dashboard#index'
   get 'backoffice/settings', to: 'backoffice/settings#index'
 
@@ -6,6 +7,9 @@ Rails.application.routes.draw do
     get 'dashboard/index'
     resources :accounts, except: [:destroy]
     resources :transactions, except: [:show, :destroy]
+    resources :transfer_transactions
+    resources :expense_transactions
+    resources :income_transactions
     resources :schedules, except: [:show, :destroy]
     get 'reports/index'
     get 'settings/index'
