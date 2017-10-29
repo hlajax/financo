@@ -4,19 +4,12 @@
     <li><a href="#!">one</a></li>
     <li class="divider"></li>
     <li>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        Sign out
-      <% end %>
     </li>
   </ul>
   <div class="navbar-fixed">
     <nav>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo center"><%= controller.controller_name.capitalize %></a>
-        <ul class="right">
-          <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">more_vert</i></a></li>
-        </ul>
       </div>
     </nav>
   </div>
@@ -58,6 +51,11 @@
     <li>
       <%= link_to backoffice_settings_index_path do %>
         Settings
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        Sign out
       <% end %>
     </li>
   </ul>
