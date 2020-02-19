@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
+ruby '2.6.5'
 
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n'
@@ -65,7 +63,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.2', '>= 1.2.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
